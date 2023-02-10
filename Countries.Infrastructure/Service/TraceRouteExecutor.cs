@@ -56,14 +56,10 @@ namespace Countries.Infrastructure.Service
 
             public RecursiveTraceRouteExecutor(RecursiveTraceRouteExecutorOptions options, 
                 ICountriesRepository repository)
-            {
-                Options = options;
-                _repository = repository;
-            }
+                => (Options, _repository) = (options, repository);
 
             public RecursiveTraceRouteExecutor(ICountriesRepository repository) 
-                : this(new RecursiveTraceRouteExecutorOptions(), repository)
-            { }
+                : this(new RecursiveTraceRouteExecutorOptions(), repository) { }
 
             public async Task Execute(Country from, Country to)
                 => await RecursiveExecute(from, to, new List<Country>());
