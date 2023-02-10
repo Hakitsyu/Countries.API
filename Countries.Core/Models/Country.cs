@@ -30,6 +30,10 @@ namespace Countries.Core.Models
 
         public IList<string> Borders { get; set; }
 
+        public IList<string> Timezones { get; set; }
+
+        public long Population { get; set; }
+
         public bool Equals(Country? other)
             => other != null && Id == other.Id;
     }

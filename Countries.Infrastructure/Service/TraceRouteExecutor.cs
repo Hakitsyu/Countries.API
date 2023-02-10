@@ -126,10 +126,7 @@ namespace Countries.Infrastructure.Service
         internal class RecursiveTraceRouteExecutorOptions
         {
             [Range(1, int.MaxValue)]
-            public int RecursiveLimit { get; set; } = 100;
-
-            [Range(1, int.MaxValue)]
-            public int MaxIteratedCount { get; set; } = 200;
+            public int MaxIteratedCount { get; set; } = 40;
         }
     }
 
